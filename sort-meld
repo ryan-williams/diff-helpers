@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+meld <(sort $1) <(sort $2)

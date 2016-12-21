@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+nmeld $1 <(sort $2) <(sort $3)
