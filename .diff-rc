@@ -21,3 +21,13 @@ fi
 if which-exists meld; then
   append_to_path "$s/mld-dir";
 fi
+
+diff_apply() {
+	cmd="$1"
+	shift
+	if [ $# -eq 2 ]; then
+		echo "$1" "$2" | pc "diff <($cmd {1}) <($cmd {2})"
+	else
+		pc "diff <($cmd {1}) <($cmd {2})"
+	fi
+}
