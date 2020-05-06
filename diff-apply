@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# Apply a command ($1) to two files ($2, $3) and diff the results
+#
+# The command should be provided in a format suitable to be passed to GNU parallel.
+#
+# Example:
+#
+# $ diff-apply sort file1 file2
+
+cmd="$1"; shift
+f1="$1"; shift
+f2="$1"; shift
+
+t1="$(mktemp)"
+t2="$(mktemp)"
+finish() {
+  rm -f "$t1" "$t2"
+}
+trap finish EXIT
+
+echo "$f1" | parallel --env PATH "$cmd" > "$t1"
+echo "$f2" | parallel --env PATH "$cmd" > "$t2"
+diff "$t1" "$t2"

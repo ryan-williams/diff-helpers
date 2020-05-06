@@ -6,7 +6,12 @@ alias hdq="head-diff -q"
 
 alias dl=diff-less
 alias dq="diff -q"
-alias d=diff
+if which-exists colordiff; then
+  defn diff colordiff
+  defn d colordiff
+else
+  defn d diff
+fi
 
 alias dtab="diff /tmp/a /tmp/b"
 alias mtab="meld /tmp/a /tmp/b"
@@ -22,12 +27,3 @@ if which-exists meld; then
   append_to_path "$s/mld-dir";
 fi
 
-diff_apply() {
-	cmd="$1"
-	shift
-	if [ $# -eq 2 ]; then
-		echo "$1" "$2" | pc "diff <($cmd {1}) <($cmd {2})"
-	else
-		pc "diff <($cmd {1}) <($cmd {2})"
-	fi
-}
