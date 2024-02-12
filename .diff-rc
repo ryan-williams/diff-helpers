@@ -27,3 +27,4 @@ if which-exists meld; then
   append_to_path "$s/mld-dir";
 fi
 
+alias dw="diff -w"
