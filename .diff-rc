@@ -28,3 +28,5 @@ if which-exists meld; then
 fi
 
 alias dw="diff -w"
+alias dwc="diff -w --color"
+alias dcw="diff --color -w"
