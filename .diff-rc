@@ -27,6 +27,7 @@ if which-exists meld; then
   append_to_path "$s/mld-dir";
 fi
 
+alias dc="diff --color"
 alias dw="diff -w"
 alias dwc="diff -w --color"
 alias dcw="diff --color -w"
