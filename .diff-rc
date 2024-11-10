@@ -31,3 +31,11 @@ alias dc="diff --color"
 alias dw="diff -w"
 alias dwc="diff -w --color"
 alias dcw="diff --color -w"
+
+# https://pypi.org/project/utz/
+alias dx=diff-x
+alias dxc="diff-x -c"
+alias dxc1="diff-x -c -U1"
+alias dxcw="diff-x -c -w"
+alias dxw="diff-x -w"
+alias dxwc="diff-x -w -c"
