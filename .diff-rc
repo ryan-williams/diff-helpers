@@ -32,7 +32,7 @@ alias dw="diff -w"
 alias dwc="diff -w --color"
 alias dcw="diff --color -w"
 
-# https://pypi.org/project/utz/
+# https://pypi.org/project/dffs/
 defn dx diff-x
 defn dxc diff-x -c
 defn dxc1 diff-x -c -U1
